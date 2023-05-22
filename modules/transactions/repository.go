@@ -36,12 +36,6 @@ func (repo Repository) Create(transaction *Transaction) error{
 	return result.Error
 } 	
 
-// func (repo Repository) CreateTransaction(transaction Transaction) error {
-// 	// result := repo.DB.Create(&transaction)
-// 	res := repo.DB.Create(&transaction)
-// 	return res.Error
-// }
-
 func (repo Repository) UpdateTransactionById(id string, transaction Transaction) error {
 	result := repo.DB.Model(&Transaction{}).Where("id = ?", id).Updates(transaction)
 	return result.Error
